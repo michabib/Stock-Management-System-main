@@ -1,5 +1,5 @@
-<!-- SIDE PART NA SUMMARY -->
-        <div class="card-body col-md-3">
+<!-- PARTIE LATÉRALE DE RÉSUMÉ -->
+<div class="card-body col-md-3">
         <?php   
         if(!empty($_SESSION['pointofsale'])):  
             
@@ -15,22 +15,22 @@
 
              endforeach;
 
-//DROPDOWN FOR CUSTOMER
+//MENU DÉROULANT POUR LE CLIENT
 $sql = "SELECT CUST_ID, FIRST_NAME, LAST_NAME
         FROM customer
         order by FIRST_NAME asc";
-$res = mysqli_query($db, $sql) or die ("Error SQL: $sql");
+$res = mysqli_query($db, $sql) or die ("Erreur SQL: $sql");
 
 $opt = "<select class='form-control'  style='border-radius: 0px;' name='customer' required>
-        <option value='' disabled selected hidden>Select Customer</option>";
+        <option value='' disabled selected hidden>Sélectionner le client</option>";
   while ($row = mysqli_fetch_assoc($res)) {
     $opt .= "<option value='".$row['CUST_ID']."'>".$row['FIRST_NAME'].' '.$row['LAST_NAME']."</option>";
   }
 $opt .= "</select>";
-// END OF DROP DOWN
+// FIN DU MENU DÉROULANT
         ?>  
 <?php 
-          echo "Today's date is : "; 
+          echo "La date d'aujourd'hui est : "; 
           $today = date("Y-m-d H:i a"); 
           echo $today; 
 ?> 
@@ -46,7 +46,7 @@ $opt .= "</select>";
 
             <div class="col-sm-5 text-left text-primary py-2">
               <h6>
-                Subtotal
+                Sous-total
               </h6>
             </div>
             <div class="col-sm-7">
@@ -63,7 +63,7 @@ $opt .= "</select>";
 
             <div class="col-sm-5 text-left text-primary py-2">
               <h6>
-                Less VAT
+                Moins TVA
               </h6>
             </div>
 
@@ -81,7 +81,7 @@ $opt .= "</select>";
 
             <div class="col-sm-5 text-left text-primary py-2">
               <h6>
-                Net of VAT
+                Net de TVA
               </h6>
             </div>
 
@@ -99,7 +99,7 @@ $opt .= "</select>";
 
             <div class="col-sm-5 text-left text-primary py-2">
               <h6>
-                Add VAT
+                Ajouter TVA
               </h6>
             </div>
 
@@ -132,14 +132,14 @@ $opt .= "</select>";
 
           </div>
 <?php endif; ?>       
-          <button type="button" class="btn btn-block btn-success" data-toggle="modal" data-target="#posMODAL">SUBMIT</button>
+          <button type="button" class="btn btn-block btn-success" data-toggle="modal" data-target="#posMODAL">SOUMETTRE</button>
 
         <!-- Modal -->
         <div class="modal fade" id="posMODAL" tabindex="-1" role="dialog" aria-labelledby="POS" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">SUMMARY</h5>
+                <h5 class="modal-title" id="exampleModalCenterTitle">RÉSUMÉ</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -149,7 +149,7 @@ $opt .= "</select>";
 
                     <div class="col-sm-12 text-center">
                       <h3 class="py-0">
-                        GRAND TOTAL
+                        TOTAL GÉNÉRAL
                       </h3>
                       <h3 class="font-weight-bold py-3 bg-light">
                         $ <?php echo number_format($total, 2); ?>
@@ -163,20 +163,19 @@ $opt .= "</select>";
                         <div class="input-group-prepend">
                           <span class="input-group-text">$</span>
                         </div>
-                          <input class="form-control text-right" id="txtNumber" onkeypress="return isNumberKey(event)" type="text" name="cash" placeholder="ENTER CASH" name="cash" required>
+                          <input class="form-control text-right" id="txtNumber" onkeypress="return isNumberKey(event)" type="text" name="cash" placeholder="ENTRER L'ARGENT" name="cash" required>
                     </div>
                   </div>
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-primary btn-block">PROCEED TO PAYMENT</button>
+                <button type="submit" class="btn btn-primary btn-block">PASSER AU PAIEMENT</button>
               </div>
             </div>
           </div>
         </div>
-        <!-- END OF Modal -->
+        <!-- FIN DU Modal -->
 
         </form>
-      </div> <!-- END OF CARD BODY -->
+      </div> <!-- FIN DU BODY DE LA CARTE -->
 
      </div>
-

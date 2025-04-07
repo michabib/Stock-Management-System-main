@@ -4,17 +4,17 @@ include'../includes/connection.php';
 include'../includes/sidebar.php';
   $query = 'SELECT ID, t.TYPE
             FROM users u
-            JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
+            JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].''; 
   $result = mysqli_query($db, $query) or die (mysqli_error($db));
   
   while ($row = mysqli_fetch_assoc($result)) {
             $Aa = $row['TYPE'];
-                   
+                   	
   if ($Aa=='User'){
 ?>
   <script type="text/javascript">
-    //then it will be redirected
-    alert("Restricted Page! You will be redirected to POS");
+    //ensuite, l'utilisateur sera redirigé
+    alert("Page restreinte ! Vous serez redirigé vers le POS");
     window.location = "pos.php";
   </script>
 <?php
@@ -48,12 +48,12 @@ include'../includes/sidebar.php';
               <div class="form-group row text-left mb-0">
                 <div class="col-sm-9">
                   <h5 class="font-weight-bold">
-                    Sales and Inventory
+                    Ventes et Inventaire
                   </h5>
                 </div>
                 <div class="col-sm-3 py-1">
                   <h6>
-                    Date: <?php echo $date; ?>
+                    Date : <?php echo $date; ?>
                   </h6>
                 </div>
               </div>
@@ -64,7 +64,7 @@ include'../includes/sidebar.php';
                     <?php echo $fname; ?> <?php echo $lname; ?>
                   </h6>
                   <h6>
-                    Phone: <?php echo $pn; ?>
+                    Téléphone : <?php echo $pn; ?>
                   </h6>
                 </div>
                 <div class="col-sm-4 py-1"></div>
@@ -73,7 +73,7 @@ include'../includes/sidebar.php';
                     Transaction #<?php echo $tid; ?>
                   </h6>
                   <h6 class="font-weight-bold">
-                    Encoder: <?php echo $role; ?>
+                    Encodeur : <?php echo $role; ?>
                   </h6>
                   <h6>
                     <?php echo $roles; ?>
@@ -83,10 +83,10 @@ include'../includes/sidebar.php';
           <table class="table table-bordered" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>Products</th>
-                <th width="8%">Qty</th>
-                <th width="20%">Price</th>
-                <th width="20%">Subtotal</th>
+                <th>Produits</th>
+                <th width="8%">Quantité</th>
+                <th width="20%">Prix</th>
+                <th width="20%">Sous-total</th>
               </tr>
             </thead>
             <tbody>
@@ -112,23 +112,23 @@ include'../includes/sidebar.php';
                 <div class="col-sm-3 py-1"></div>
                 <div class="col-sm-4 py-1">
                   <h4>
-                    Cash Amount: ₱ <?php echo number_format($cash, 2); ?>
+                    Montant en espèces : ₱ <?php echo number_format($cash, 2); ?>
                   </h4>
                   <table width="100%">
                     <tr>
-                      <td class="font-weight-bold">Subtotal</td>
+                      <td class="font-weight-bold">Sous-total</td>
                       <td class="text-right">₱ <?php echo $sub; ?></td>
                     </tr>
                     <tr>
-                      <td class="font-weight-bold">Less VAT</td>
+                      <td class="font-weight-bold">Moins la TVA</td>
                       <td class="text-right">₱ <?php echo $less; ?></td>
                     </tr>
                     <tr>
-                      <td class="font-weight-bold">Net of VAT</td>
+                      <td class="font-weight-bold">Net de la TVA</td>
                       <td class="text-right">₱ <?php echo $net; ?></td>
                     </tr>
                     <tr>
-                      <td class="font-weight-bold">Add VAT</td>
+                      <td class="font-weight-bold">Ajout de la TVA</td>
                       <td class="text-right">₱ <?php echo $add; ?></td>
                     </tr>
                     <tr>

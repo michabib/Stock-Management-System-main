@@ -14,7 +14,7 @@ include'../includes/sidebar.php';
 ?>
   <script type="text/javascript">
     //then it will be redirected
-    alert("Restricted Page! You will be redirected to POS");
+    alert("Page restreinte ! Vous serez redirigé vers le point de vente.");
     window.location = "pos.php";
   </script>
 <?php
@@ -27,20 +27,20 @@ $query2 = 'SELECT NAME FROM product p join category c on p.CATEGORY_ID=c.CATEGOR
             
             <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h4 class="m-2 font-weight-bold text-primary">Inventory for : <?php while ($row = mysqli_fetch_assoc($result2)) { echo $row['NAME']; } ?></h4>
+              <h4 class="m-2 font-weight-bold text-primary">Inventaire pour : <?php while ($row = mysqli_fetch_assoc($result2)) { echo $row['NAME']; } ?></h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"> 
                <thead>
                    <tr>
-                     <th>Product Code</th>
-                     <th>Name</th>
-                     <th>Quantity</th>
-                     <th>On Hand</th>
-                     <th>Category</th>
-                     <th>Supplier</th>
-                     <th>Date Stock In</th>
+                     <th>Code Produit</th>
+                     <th>Nom</th>
+                     <th>Quantité</th>
+                     <th>En stock</th>
+                     <th>Catégorie</th>
+                     <th>Fournisseur</th>
+                     <th>Date d'entrée en stock</th>
                      <th>Action</th>
                    </tr>
                </thead>
@@ -59,7 +59,7 @@ $query = 'SELECT PRODUCT_ID, PRODUCT_CODE, NAME, QTY_STOCK, ON_HAND, CNAME, COMP
                 echo '<td>'. $row['COMPANY_NAME'].'</td>';
                 echo '<td>'. $row['DATE_STOCK_IN'].'</td>';
                 echo '<td align="right">
-                      <a type="button" class="btn btn-warning bg-gradient-warning" href="inv_edit.php?action=edit & id='.$row['PRODUCT_ID']. '"><i class="fas fa-fw fa-edit"></i> Edit</a>
+                      <a type="button" class="btn btn-warning bg-gradient-warning" href="inv_edit.php?action=edit & id='.$row['PRODUCT_ID']. '"><i class="fas fa-fw fa-edit"></i> Modifier</a>
                           </div></td>';
                 echo '</tr> ';
                         }

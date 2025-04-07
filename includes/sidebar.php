@@ -3,7 +3,7 @@
   confirm_logged_in();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <style type="text/css">
@@ -36,75 +36,75 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title> Stock Control Management System </title>
+  <title>Système de gestion de stock</title>
   <link rel="icon" href="https://www.freeiconspng.com/uploads/sales-icon-7.png">
 
-  <!-- Custom fonts for this template-->
+  <!-- Polices personnalisées pour ce modèle-->
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template-->
+  <!-- Styles personnalisés pour ce modèle-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this page -->
+  <!-- Styles personnalisés pour cette page -->
   <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
           
-  <!-- Page Wrapper -->
+  <!-- Wrapper de la page -->
   <div id="wrapper">
 
-    <!-- Sidebar -->
+    <!-- Barre latérale -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-      <!-- Sidebar - Brand -->
+      <!-- Marque de la barre latérale -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Stock Control System</div>
+        <div class="sidebar-brand-text mx-3">Système de contrôle des stocks</div>
       </a>
 
-      <!-- Divider -->
+      <!-- Séparateur -->
       <hr class="sidebar-divider my-0">
 
-      <!-- Nav Item - Dashboard -->
+      <!-- Élément de navigation - Tableau de bord -->
       <li class="nav-item">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-home"></i>
-          <span>Home</span></a>
+          <span>Accueil</span></a>
       </li>
-      <!-- Divider -->
+      <!-- Séparateur -->
       <hr class="sidebar-divider">
 
-      <!-- Heading -->
+      <!-- En-tête -->
       <div class="sidebar-heading">
-        General
+        Général
       </div>
-      <!-- Tables Buttons -->
+      <!-- Boutons des tables -->
       <li class="nav-item">
         <a class="nav-link" href="customer.php">
           <i class="fas fa-fw fa-user"></i>
-          <span>Customer</span></a>
+          <span>Client</span></a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="employee.php">
           <i class="fas fa-fw fa-user"></i>
-          <span>Employee</span></a>
+          <span>Employé</span></a>
       </li>
       
       <li class="nav-item">
         <a class="nav-link" href="product.php">
           <i class="fas fa-fw fa-table"></i>
-          <span>Product</span></a>
+          <span>Produit</span></a>
       </li>
       
       <li class="nav-item">
         <a class="nav-link" href="inventory.php">
           <i class="fas fa-fw fa-archive"></i>
-          <span>Inventory</span></a>
+          <span>Inventaire</span></a>
       </li>
       
       <li class="nav-item">
@@ -116,22 +116,22 @@
       <li class="nav-item">
         <a class="nav-link" href="supplier.php">
           <i class="fas fa-fw fa-cogs"></i>
-          <span>Supplier</span></a>
+          <span>Fournisseur</span></a>
       </li>
       
       <li class="nav-item">
         <a class="nav-link" href="user.php">
           <i class="fas fa-fw fa-users"></i>
-          <span>Accounts</span></a>
+          <span>Comptes</span></a>
       </li>
-      <!-- Divider -->
+      <!-- Séparateur -->
       <hr class="sidebar-divider d-none d-md-block">
 
-      <!-- Sidebar Toggler (Sidebar) -->
+      <!-- Bascule de la barre latérale -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
 
     </ul>
-    <!-- End of Sidebar -->
+    <!-- Fin de la barre latérale -->
     <?php include_once 'topbar.php'; ?>

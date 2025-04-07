@@ -14,7 +14,7 @@ include'../includes/sidebar.php';
 ?>
   <script type="text/javascript">
     //then it will be redirected
-    alert("Restricted Page! You will be redirected to POS");
+    alert("Page restreinte ! Vous serez redirigé vers le point de vente.");
     window.location = "pos.php";
   </script>
 <?php
@@ -24,7 +24,7 @@ $sql = "SELECT DISTINCT CNAME, CATEGORY_ID FROM category order by CNAME asc";
 $result = mysqli_query($db, $sql) or die ("Bad SQL: $sql");
 
 $opt = "<select class='form-control' name='category'>
-        <option disabled selected>Select Category</option>";
+        <option disabled selected>Sélectionner la catégorie</option>";
   while ($row = mysqli_fetch_assoc($result)) {
     $opt .= "<option value='".$row['CATEGORY_ID']."'>".$row['CNAME']."</option>";
   }
@@ -48,9 +48,9 @@ $opt .= "</select>";
 
   <center><div class="card shadow mb-4 col-xs-12 col-md-8 border-bottom-primary">
             <div class="card-header py-3">
-              <h4 class="m-2 font-weight-bold text-primary">Edit Inventory for : <?php echo $A ?></h4>
+              <h4 class="m-2 font-weight-bold text-primary">Modifier l'inventaire pour : <?php echo $A ?></h4>
             </div>
-            <a type="button" class="btn btn-primary bg-gradient-primary" href="inv_searchfrm.php?action=edit & id='<?php echo $zzz; ?>'"><i class="fas fa-fw fa-flip-horizontal fa-share"></i> Back</a>
+            <a type="button" class="btn btn-primary bg-gradient-primary" href="inv_searchfrm.php?action=edit & id='<?php echo $zzz; ?>'"><i class="fas fa-fw fa-flip-horizontal fa-share"></i> Retour</a>
                 
             <div class="card-body">
 
@@ -58,7 +58,7 @@ $opt .= "</select>";
               <input type="hidden" name="idd" value="<?php echo $zz; ?>" />
               <div class="form-group row text-left text-warning">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Product Code:
+                 Code produit :
                 </div>
                 <div class="col-sm-9">
                   <input class="form-control" value="<?php echo $zzz; ?>" readonly>
@@ -66,7 +66,7 @@ $opt .= "</select>";
               </div>
               <div class="form-group row text-left text-warning">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Product Name:
+                 Nom du produit :
                 </div>
                 <div class="col-sm-9">
                   <input class="form-control" value="<?php echo $A; ?>" readonly>
@@ -74,23 +74,23 @@ $opt .= "</select>";
               </div>
               <div class="form-group row text-left text-warning">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Quantity:
+                 Quantité :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Quantity" name="qty" value="<?php echo $B; ?>" required>
+                  <input class="form-control" placeholder="Quantité" name="qty" value="<?php echo $B; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-warning">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 On Hand:
+                 En stock :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="On Hand" name="oh" value="<?php echo $C; ?>" required>
+                  <input class="form-control" placeholder="En stock" name="oh" value="<?php echo $C; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-warning">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Supplier:
+                 Fournisseur :
                 </div>
                 <div class="col-sm-9">
                   <input class="form-control" value="<?php echo $D; ?>" readonly>
@@ -98,7 +98,7 @@ $opt .= "</select>";
               </div>
               <div class="form-group row text-left text-warning">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Category:
+                 Catégorie :
                 </div>
                 <div class="col-sm-9">
                    <input class="form-control"value="<?php echo $E; ?>" readonly>
@@ -106,7 +106,7 @@ $opt .= "</select>";
               </div>
               <hr>
 
-                <button type="submit" class="btn btn-warning btn-block"><i class="fa fa-edit fa-fw"></i>Update</button>    
+                <button type="submit" class="btn btn-warning btn-block"><i class="fa fa-edit fa-fw"></i>Mettre à jour</button>    
               </form>  
             </div>
           </div></center>

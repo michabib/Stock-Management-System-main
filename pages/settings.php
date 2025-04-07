@@ -4,17 +4,17 @@ include'../includes/connection.php';
 include'../includes/sidebar.php';
   $query = 'SELECT ID, t.TYPE
             FROM users u
-            JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
+            JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].''; 
   $result = mysqli_query($db, $query) or die (mysqli_error($db));
   
   while ($row = mysqli_fetch_assoc($result)) {
             $Aa = $row['TYPE'];
-                   
+                   	
   if ($Aa=='User'){
 ?>
   <script type="text/javascript">
-    //then it will be redirected
-    alert("Restricted Page! You will be redirected to POS");
+    //la page sera redirigée
+    alert("Page restreinte ! Vous serez redirigé vers POS");
     window.location = "pos.php";
   </script>
 <?php
@@ -23,7 +23,7 @@ include'../includes/sidebar.php';
 
 // JOB SELECT OPTION TAB
 $sql = "SELECT DISTINCT TYPE, TYPE_ID FROM type";
-$result = mysqli_query($db, $sql) or die ("Bad SQL: $sql");
+$result = mysqli_query($db, $sql) or die ("Mauvaise requête SQL: $sql");
 
 $opt = "<select class='form-control' name='type'>";
   while ($row = mysqli_fetch_assoc($result)) {
@@ -61,7 +61,7 @@ $opt .= "</select>";
 
         <div class="card shadow mb-4 col-xs-12 col-md-12 border-bottom-primary">
             <div class="card-header py-3">
-              <h4 class="m-2 font-weight-bold text-primary">Edit Account Info</h4>
+              <h4 class="m-2 font-weight-bold text-primary">Modifier les informations du compte</h4>
             </div>
             <div class="card-body">
       
@@ -71,51 +71,51 @@ $opt .= "</select>";
 
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 First Name:
+                 Prénom :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="First Name" name="firstname" value="<?php echo $a; ?>" required>
+                  <input class="form-control" placeholder="Prénom" name="firstname" value="<?php echo $a; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Last Name:
+                 Nom de famille :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Last Name" name="lastname" value="<?php echo $b; ?>" required>
+                  <input class="form-control" placeholder="Nom de famille" name="lastname" value="<?php echo $b; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Gender:
+                 Sexe :
                 </div>
                 <div class="col-sm-9">
                   <select class='form-control' name='gender' required>
-                    <option value="" disabled selected hidden>Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="" disabled selected hidden>Sélectionner le sexe</option>
+                    <option value="Male">Homme</option>
+                    <option value="Female">Femme</option>
                   </select>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Username:
+                 Nom d'utilisateur :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Username" name="username" value="<?php echo $d; ?>" required>
+                  <input class="form-control" placeholder="Nom d'utilisateur" name="username" value="<?php echo $d; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Password:
+                 Mot de passe :
                 </div>
                 <div class="col-sm-9">
-                  <input type="password" class="form-control" placeholder="Password" name="password" value="" required>
+                  <input type="password" class="form-control" placeholder="Mot de passe" name="password" value="" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Email:
+                 Email :
                 </div>
                 <div class="col-sm-9">
                   <input class="form-control" placeholder="Email" name="email" value="<?php echo $f; ?>" required>
@@ -123,31 +123,31 @@ $opt .= "</select>";
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Contact #:
+                 Contact # :
                 </div>
                 <div class="col-sm-9">
-                   <input class="form-control" placeholder="Contact #" name="phone" value="<?php echo $g; ?>" required>
+                   <input class="form-control" placeholder="Numéro de contact" name="phone" value="<?php echo $g; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Role:
+                 Rôle :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Role" name="role" value="<?php echo $h; ?>" readonly>
+                  <input class="form-control" placeholder="Rôle" name="role" value="<?php echo $h; ?>" readonly>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Hired Date:
+                 Date d'embauche :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Hired Date" name="hireddate" value="<?php echo $i; ?>" required>
+                  <input class="form-control" placeholder="Date d'embauche" name="hireddate" value="<?php echo $i; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Province:
+                 Province :
                 </div>
                 <div class="col-sm-9">
                   <input class="form-control" placeholder="Province" name="province" value="<?php echo $j; ?>" required>
@@ -155,23 +155,23 @@ $opt .= "</select>";
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 City / Municipality:
+                 Ville / Municipalité :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="City / Municipality" name="city" value="<?php echo $k; ?>" required>
+                  <input class="form-control" placeholder="Ville / Municipalité" name="city" value="<?php echo $k; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                  Account Type:
+                  Type de compte :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Account Type" name="type" value="<?php echo $l; ?>" readonly>
+                  <input class="form-control" placeholder="Type de compte" name="type" value="<?php echo $l; ?>" readonly>
                 </div>
               </div>
               <hr>
 
-                <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-edit fa-fw"></i>Update</button>    
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-edit fa-fw"></i>Mettre à jour</button>    
               </form>  
             </div>
           </div>        
@@ -179,4 +179,3 @@ $opt .= "</select>";
 <?php
 include'../includes/footer.php';
 ?>
-

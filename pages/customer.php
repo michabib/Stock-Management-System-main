@@ -15,7 +15,7 @@ if ($Aa=='User'){
            
              ?>    <script type="text/javascript">
                       //then it will be redirected
-                      alert("Restricted Page! You will be redirected to POS");
+                      alert("Page restreinte ! Vous allez être redirigé vers le point de vente.");
                       window.location = "pos.php";
                   </script>
              <?php   }
@@ -25,7 +25,7 @@ if ($Aa=='User'){
             
             <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h4 class="m-2 font-weight-bold text-primary">Customer&nbsp;<a  href="#" data-toggle="modal" data-target="#customerModal" type="button" class="btn btn-primary bg-gradient-primary" style="border-radius: 0px;"><i class="fas fa-fw fa-plus"></i></a></h4>
+              <h4 class="m-2 font-weight-bold text-primary">Clients&nbsp;<a  href="#" data-toggle="modal" data-target="#customerModal" type="button" class="btn btn-primary bg-gradient-primary" style="border-radius: 0px;"><i class="fas fa-fw fa-plus"></i></a></h4>
             </div>
             
             <div class="card-body">
@@ -33,9 +33,9 @@ if ($Aa=='User'){
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">        
                   <thead>
                       <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Phone Number</th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Numéro de téléphone</th>
                         <th>Action</th>
                       </tr>
                   </thead>
@@ -50,14 +50,14 @@ if ($Aa=='User'){
                       echo '<td>'. $row['LAST_NAME'].'</td>';
                       echo '<td>'. $row['PHONE_NUMBER'].'</td>';
                       echo '<td align="right"> <div class="btn-group">
-                              <a type="button" class="btn btn-primary bg-gradient-primary" href="cust_searchfrm.php?action=edit & id='.$row['CUST_ID'] . '"><i class="fas fa-fw fa-list-alt"></i> Details</a>
+                              <a type="button" class="btn btn-primary bg-gradient-primary" href="cust_searchfrm.php?action=edit & id='.$row['CUST_ID'] . '"><i class="fas fa-fw fa-list-alt"></i> Détails</a>
                             <div class="btn-group">
                               <a type="button" class="btn btn-primary bg-gradient-primary dropdown no-arrow" data-toggle="dropdown" style="color:white;">
                               ... <span class="caret"></span></a>
                             <ul class="dropdown-menu text-center" role="menu">
                                 <li>
                                   <a type="button" class="btn btn-warning bg-gradient-warning btn-block" style="border-radius: 0px;" href="cust_edit.php?action=edit & id='.$row['CUST_ID']. '">
-                                    <i class="fas fa-fw fa-edit"></i> Edit
+                                    <i class="fas fa-fw fa-edit"></i> Modifier
                                   </a>
                                 </li>
                             </ul>

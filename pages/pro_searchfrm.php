@@ -4,17 +4,17 @@ include'../includes/connection.php';
 include'../includes/sidebar.php';
   $query = 'SELECT ID, t.TYPE
             FROM users u
-            JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
+            JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].''; 
   $result = mysqli_query($db, $query) or die (mysqli_error($db));
   
   while ($row = mysqli_fetch_assoc($result)) {
             $Aa = $row['TYPE'];
-                   
+                   	
   if ($Aa=='User'){
 ?>
   <script type="text/javascript">
-    //then it will be redirected
-    alert("Restricted Page! You will be redirected to POS");
+    //la page sera redirigée
+    alert("Page restreinte! Vous serez redirigé vers POS");
     window.location = "pos.php";
   </script>
 <?php
@@ -23,9 +23,9 @@ include'../includes/sidebar.php';
             ?>
           <center><div class="card shadow mb-4 col-xs-12 col-md-8 border-bottom-primary">
             <div class="card-header py-3">
-              <h4 class="m-2 font-weight-bold text-primary">Product's Detail</h4>
+              <h4 class="m-2 font-weight-bold text-primary">Détails du produit</h4>
             </div>
-            <a href="product.php?action=add" type="button" class="btn btn-primary bg-gradient-primary btn-block"> <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Back</a>
+            <a href="product.php?action=add" type="button" class="btn btn-primary bg-gradient-primary btn-block"> <i class="fas fa-flip-horizontal fa-fw fa-share"></i> Retour</a>
             <div class="card-body">
           <?php 
             $query = 'SELECT PRODUCT_ID, PRODUCT_CODE, NAME,DESCRIPTION, COUNT(`QTY_STOCK`) AS "QTY_STOCK", COUNT(`ON_HAND`) AS "ON_HAND",PRICE, c.CNAME FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID WHERE PRODUCT_CODE ='.$_GET['id'];
@@ -45,7 +45,7 @@ include'../includes/sidebar.php';
                   <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          Product Code<br>
+                          Code produit<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -57,7 +57,7 @@ include'../includes/sidebar.php';
                     <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          Product Name<br>
+                          Nom du produit<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -81,7 +81,7 @@ include'../includes/sidebar.php';
                   <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          Price<br>
+                          Prix<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -93,7 +93,7 @@ include'../includes/sidebar.php';
                   <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          Category<br>
+                          Catégorie<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -107,20 +107,20 @@ include'../includes/sidebar.php';
 
           <div class="card shadow mb-4 col-xs-12 col-md-15 border-bottom-primary">
             <div class="card-header py-3">
-              <h4 class="m-2 font-weight-bold text-primary">Inventory</h4>
+              <h4 class="m-2 font-weight-bold text-primary">Inventaire</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"> 
                <thead>
                    <tr>
-                     <th>Product Code</th>
-                     <th>Name</th>
-                     <th>Quantity</th>
-                     <th>On Hand</th>
-                     <th>Category</th>
-                     <th>Supplier</th>
-                     <th>Date Stock In</th>
+                     <th>Code produit</th>
+                     <th>Nom</th>
+                     <th>Quantité</th>
+                     <th>En stock</th>
+                     <th>Catégorie</th>
+                     <th>Fournisseur</th>
+                     <th>Date d'entrée en stock</th>
                    </tr>
                </thead>
           <tbody>

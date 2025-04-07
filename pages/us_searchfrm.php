@@ -4,17 +4,17 @@ include'../includes/connection.php';
 include'../includes/sidebar.php';
   $query = 'SELECT ID, t.TYPE
             FROM users u
-            JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].'';
+            JOIN type t ON t.TYPE_ID=u.TYPE_ID WHERE ID = '.$_SESSION['MEMBER_ID'].''; 
   $result = mysqli_query($db, $query) or die (mysqli_error($db));
   
   while ($row = mysqli_fetch_assoc($result)) {
             $Aa = $row['TYPE'];
-                   
+                   	
   if ($Aa=='User'){
 ?>
   <script type="text/javascript">
-    //then it will be redirected
-    alert("Restricted Page! You will be redirected to POS");
+    // L'utilisateur sera redirigé
+    alert("Page restreinte ! Vous allez être redirigé vers le POS");
     window.location = "pos.php";
   </script>
 <?php
@@ -49,15 +49,15 @@ include'../includes/sidebar.php';
 ?>
           <center><div class="card shadow mb-4 col-xs-12 col-md-8 border-bottom-primary">
             <div class="card-header py-3">
-              <h4 class="m-2 font-weight-bold text-primary"><?php echo $a; ?>'s Detail</h4>
+              <h4 class="m-2 font-weight-bold text-primary"><?php echo $a; ?> Détails</h4>
             </div>
-            <a href="user.php?action=add" type="button" class="btn btn-primary bg-gradient-primary">Back</a>
+            <a href="user.php?action=add" type="button" class="btn btn-primary bg-gradient-primary">Retour</a>
             <div class="card-body">
                 
                     <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          Full Name<br>
+                          Nom Complet<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -69,7 +69,7 @@ include'../includes/sidebar.php';
                     <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          Gender<br>
+                          Genre<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -81,7 +81,7 @@ include'../includes/sidebar.php';
                     <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          Username<br>
+                          Nom d'utilisateur<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -105,7 +105,7 @@ include'../includes/sidebar.php';
                     <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          Contact #<br>
+                          Numéro de contact<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -117,7 +117,7 @@ include'../includes/sidebar.php';
                     <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          Role<br>
+                          Rôle<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -129,7 +129,7 @@ include'../includes/sidebar.php';
                     <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          Hired Date<br>
+                          Date d'embauche<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -153,7 +153,7 @@ include'../includes/sidebar.php';
                     <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          City / Municipality<br>
+                          Ville / Municipalité<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -165,7 +165,7 @@ include'../includes/sidebar.php';
                     <div class="form-group row text-left">
                       <div class="col-sm-3 text-primary">
                         <h5>
-                          Account Type<br>
+                          Type de compte<br>
                         </h5>
                       </div>
                       <div class="col-sm-9">
@@ -179,4 +179,4 @@ include'../includes/sidebar.php';
 
 <?php
 include'../includes/footer.php';
-?>
+?> 

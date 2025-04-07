@@ -1,73 +1,72 @@
-
-        </div>
+</div>
         <!-- /.container-fluid -->
 
       </div>
-      <!-- End of Main Content -->
+      <!-- Fin du contenu principal -->
 
-      <!-- Footer -->
+      <!-- Pied de page -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-              <span>Copyright © 2022. All Rights Reserved.</span>
+              <span>Copyright © 2022. Tous droits réservés.</span>
           </div>
         </div>
       </footer>
-      <!-- End of Footer -->
+      <!-- Fin du pied de page -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- Fin du wrapper de contenu -->
 
   </div>
-  <!-- End of Page Wrapper -->
+  <!-- Fin du wrapper de page -->
 
-  <!-- Scroll to Top Button-->
+  <!-- Bouton de retour en haut -->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
+  <!-- Modal de déconnexion -->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Prêt à partir ?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body"><?php echo  $_SESSION['FIRST_NAME']; ?> are you sure do you want to logout?</div>
+        <div class="modal-body"><?php echo  $_SESSION['FIRST_NAME']; ?>, êtes-vous sûr de vouloir vous déconnecter ?</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="logout.php">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+          <a class="btn btn-primary" href="logout.php">Se déconnecter</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
+  <!-- JavaScript de base Bootstrap -->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
+  <!-- JavaScript du plugin principal -->
   <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
+  <!-- Scripts personnalisés pour toutes les pages -->
   <script src="../js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
+  <!-- Plugins au niveau de la page -->
   <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-  <!-- Page level custom scripts -->
+  <!-- Scripts personnalisés au niveau de la page -->
   <script src="../js/demo/datatables-demo.js"></script>
   <script src="../js/city.js"></script> 
   
 
-<!-- PROFILE OVERLAY NA MODAL -->
+<!-- SUPERPOSITION DE PROFIL ET MODAL -->
 <div id="overlay" onclick="off()">
-  <div id="text">I'm <?php echo  $_SESSION['FIRST_NAME']. ' '.$_SESSION['LAST_NAME'] ;?><BR>
-    From <?php echo  $_SESSION['PROVINCE']. ' '.$_SESSION['CITY'] ;?></div>
+  <div id="text">Je suis <?php echo  $_SESSION['FIRST_NAME']. ' '.$_SESSION['LAST_NAME'] ;?><BR>
+    De <?php echo  $_SESSION['PROVINCE']. ' '.$_SESSION['CITY'] ;?></div>
 </div>
 <script>
 function on() {
@@ -78,7 +77,7 @@ function off() {
   document.getElementById("overlay").style.display = "none";
 }
 
-//used in pos sa number only na textfields
+// Utilisé uniquement pour les champs texte de numéros dans pos
 function isNumberKey(evt)
       {
         var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -87,7 +86,7 @@ function isNumberKey(evt)
         return false;
         return true;
       }  
-//end of used in pos sa number only na textfields
+// Fin de l'utilisation uniquement pour les champs texte de numéros dans pos
 </script>
 
 </body>
@@ -96,9 +95,9 @@ function isNumberKey(evt)
 
 <?php
   include 'modal.php';
-// JOB SELECT OPTION TAB
+// Onglet de sélection du travail
 $sql = "SELECT DISTINCT TYPE, TYPE_ID FROM type";
-$result = mysqli_query($db, $sql) or die ("Bad SQL: $sql");
+$result = mysqli_query($db, $sql) or die ("Mauvaise requête SQL : $sql");
 
 $opt = "<select class='form-control' name='type'>";
   while ($row = mysqli_fetch_assoc($result)) {
@@ -133,12 +132,12 @@ $opt .= "</select>";
           }
       ?>
 
-  <!-- User Edit Info Modal-->
+  <!-- Modal de modification des informations utilisateur -->
   <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit User Info</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Modifier les informations de l'utilisateur</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -149,51 +148,51 @@ $opt .= "</select>";
 
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 First Name:
+                 Prénom :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="First Name" name="firstname" value="<?php echo $a; ?>" required>
+                  <input class="form-control" placeholder="Prénom" name="firstname" value="<?php echo $a; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Last Name:
+                 Nom de famille :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Last Name" name="lastname" value="<?php echo $b; ?>" required>
+                  <input class="form-control" placeholder="Nom de famille" name="lastname" value="<?php echo $b; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Gender:
+                 Genre :
                 </div>
                 <div class="col-sm-9">
                   <select class='form-control' name='gender' required>
-                    <option value="" disabled selected hidden>Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="" disabled selected hidden>Sélectionner le genre</option>
+                    <option value="Male">Homme</option>
+                    <option value="Female">Femme</option>
                   </select>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Username:
+                 Nom d'utilisateur :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Username" name="username" value="<?php echo $d; ?>" required>
+                  <input class="form-control" placeholder="Nom d'utilisateur" name="username" value="<?php echo $d; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Password:
+                 Mot de passe :
                 </div>
                 <div class="col-sm-9">
-                  <input type="password" class="form-control" placeholder="Password" name="password" value="" required>
+                  <input type="password" class="form-control" placeholder="Mot de passe" name="password" value="" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Email:
+                 Email :
                 </div>
                 <div class="col-sm-9">
                   <input class="form-control" placeholder="Email" name="email" value="<?php echo $f; ?>" required>
@@ -201,31 +200,31 @@ $opt .= "</select>";
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Contact #:
+                 Numéro de contact :
                 </div>
                 <div class="col-sm-9">
-                   <input class="form-control" placeholder="Contact #" name="phone" value="<?php echo $g; ?>" required>
+                   <input class="form-control" placeholder="Numéro de contact" name="phone" value="<?php echo $g; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Role:
+                 Rôle :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Role" name="role" value="<?php echo $h; ?>" readonly>
+                  <input class="form-control" placeholder="Rôle" name="role" value="<?php echo $h; ?>" readonly>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Hired Date:
+                 Date d'embauche :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Hired Date" name="hireddate" value="<?php echo $i; ?>" required>
+                  <input class="form-control" placeholder="Date d'embauche" name="hireddate" value="<?php echo $i; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 Province:
+                 Province :
                 </div>
                 <div class="col-sm-9">
                   <input class="form-control" placeholder="Province" name="province" value="<?php echo $j; ?>" required>
@@ -233,23 +232,23 @@ $opt .= "</select>";
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                 City / Municipality:
+                 Ville / Municipalité :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="City / Municipality" name="city" value="<?php echo $k; ?>" required>
+                  <input class="form-control" placeholder="Ville / Municipalité" name="city" value="<?php echo $k; ?>" required>
                 </div>
               </div>
               <div class="form-group row text-left text-primary">
                 <div class="col-sm-3" style="padding-top: 5px;">
-                  Account Type:
+                  Type de compte :
                 </div>
                 <div class="col-sm-9">
-                  <input class="form-control" placeholder="Account Type" name="type" value="<?php echo $l; ?>" readonly>
+                  <input class="form-control" placeholder="Type de compte" name="type" value="<?php echo $l; ?>" readonly>
                 </div>
               </div>
               <hr>
-            <button type="submit" class="btn btn-success"><i class="fa fa-check fa-fw"></i>Save</button>
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>      
+            <button type="submit" class="btn btn-success"><i class="fa fa-check fa-fw"></i>Enregistrer</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Fermer</button>      
           </form>  
         </div>
       </div>

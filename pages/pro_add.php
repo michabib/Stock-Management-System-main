@@ -47,7 +47,7 @@ $sup .= "</select>";
             <div class="card-header py-3">
               <h4 class="m-2 font-weight-bold text-primary">Add Product</h4>
             </div>
-            <a href="product.php?action=add" type="button" class="btn btn-primary bg-gradient-primary">Back</a>
+            <a href="product.php?action=add" type="button" class="btn btn-primary bg-gradient-primary">Retour</a>
             <div class="card-body">
                       <div class="table-responsive">
 
@@ -86,8 +86,8 @@ $sup .= "</select>";
                               <input type="datet" class="form-control" placeholder="Date Stock In" name="datestock" required>
                             </div>
                             <hr>
-                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-check fa-fw"></i>Save</button>
-                            <button type="reset" class="btn btn-danger btn-block"><i class="fa fa-times fa-fw"></i>Reset</button>
+                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-check fa-fw"></i>sauvegarder</button>
+                            <button type="reset" class="btn btn-danger btn-block"><i class="fa fa-times fa-fw"></i>Reinitialiser</button>
                             
                         </form>  
 
